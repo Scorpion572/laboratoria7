@@ -1,7 +1,8 @@
 ﻿#include <iostream>
 #include <string>
 using namespace std;
-
+int sumacyfry_iteracyjnie(string cyfra);
+int sumacyfry_rekurencyjnie(string cyfra);
 int fibonachi(int x);
 int fibonachi_iteracyjnie(int liczba);
 void choinka(int wysokosc,int szerokosc);
@@ -63,8 +64,17 @@ int main()
 	cout << "suma n liczb wynosi " << suma_n_liczb_rekurencyjnie(liczba) << endl;   
     */
 
+	/*string cyfra;                                                  //zadanie 10.i
+	cout << "podaj cyfre" << endl;
+	cin >> cyfra;
+	cout << "suma cyfr wynosi " << sumacyfry_iteracyjnie(cyfra) << endl;
+    */
+	/*string cyfra;                                                 //zadanie 10.r
+    cout << "podaj cyfre" << endl;
+    cin >> cyfra;
+    cout << "suma cyfr wynosi " << sumacyfry_rekurencyjnie(cyfra) << endl;
     return 0;
-
+    */
 
 }
 
@@ -79,6 +89,21 @@ void choinka(int wysokosc, int szerokosc) {
         cout << endl;
         choinka(wysokosc - 1, szerokosc + 2);
     }
+}
+
+int sumacyfry_iteracyjnie(string cyfra){
+    int suma = 0;
+    for (int i = 0; i < cyfra.length(); i++) {
+        suma = suma + cyfra[i]-48;
+}
+    return suma;
+}
+int sumacyfry_rekurencyjnie(string cyfra) {
+    if (cyfra.length() == 0) {
+        return 0;
+   }
+    else
+		return (cyfra[0] - 48) + sumacyfry_rekurencyjnie(cyfra.substr(1));
 }
 
 int fibonachi(int x) {
