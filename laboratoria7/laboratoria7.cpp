@@ -10,10 +10,11 @@ int potegowanie_rekurencyjne(int podstawa, int wykladnik);
 int main()
 {
 
-    int x;
-    cout << "podaj liczbe naturalna" << endl;
+   /* int x;                                                  //zadanie 1.
+    cout << "podaj wysokosc choinki" << endl;
     cin >> x;
-   
+	choinka(x,1);
+   */
 
 
     /*
@@ -31,8 +32,32 @@ int main()
     cin >> wykladnik;
     cout << "Wynik " << podstawa << "  podnisione do potegi " << wykladnik << " = " << potegowanie_iteracyjnie(podstawa, wykladnik) << endl;
     */
+	/*int podstawa = 0, wykladnik = 0;                                                            //zadanie 7.r
+    cout << " podaj podstawe i wykladnik potegi (tylko liczby naturalne)" << endl;
+    cin >> podstawa;
+    cin >> wykladnik;
+    cout << "Wynik " << podstawa << "  podnisione do potegi " << wykladnik << " = " << potegowanie_rekurencyjne(podstawa, wykladnik) << endl;
+   */
+	int liczba = 0;                                       //zadanie 8.i
+    cout << "podaj liczbe której silnie chcessz uzyskac" << endl;
+    
+    
+    return 0;
 
 
+}
+
+void choinka(int wysokosc, int szerokosc) {
+    if (wysokosc > 0) {
+        for (int i = 0; i < wysokosc - 1; i++) {
+            cout << " ";
+        }
+        for (int j = 0; j < szerokosc; j++) {
+            cout << "*";
+        }
+        cout << endl;
+        choinka(wysokosc - 1, szerokosc + 2);
+    }
 }
 int fibonachi(int x) {
     if (x == 0)
@@ -51,12 +76,7 @@ int fibonachi_iteracyjnie(int liczba) {                     //w trakcie
     }
     return 0;
 }
-void choinka(int wysokosc,int szerokosc) {
-    for (int i = 0; i < szerokosc; i++) {
-        cout << " ";
 
-}
-}
 
 int potegowanie_iteracyjnie(int podstawa, int wykladnik) {
     int wynik = podstawa;
@@ -70,7 +90,7 @@ int potegowanie_iteracyjnie(int podstawa, int wykladnik) {
         return wynik;
     }
 }
-int potegowanie_rekurencyjne(int podstawa, int wykladnik) { //do dokonczenia
+int potegowanie_rekurencyjne(int podstawa, int wykladnik) { 
    
     if (wykladnik == 0) {
         return 1;
@@ -79,8 +99,8 @@ int potegowanie_rekurencyjne(int podstawa, int wykladnik) { //do dokonczenia
         return podstawa;
     }
     else {
-        for (int i; i < wykladnik; i++) {
-            
+        for (int i=0; i < wykladnik; i++) {
+			return podstawa * potegowanie_rekurencyjne(podstawa, wykladnik - 1);
        }
     }
 }
