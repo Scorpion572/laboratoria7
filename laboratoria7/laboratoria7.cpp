@@ -12,6 +12,8 @@ int silnia_iteracyjnie(int liczba);
 int silnia_rekurencyjnie(int liczba);
 int suma_n_liczb_iteracyjnie(int liczba);
 int suma_n_liczb_rekurencyjnie(int liczba);
+int  algorytm_euklidesa(int a, int b);
+int NWD_iteracyjnie(int a, int b);
 int main()
 {
 
@@ -21,6 +23,17 @@ int main()
 	choinka(x,1);
    */
 
+   /*string cyfra;                                                  //zadanie 2.i
+   cout << "podaj cyfre" << endl;
+   cin >> cyfra;
+   cout << "suma cyfr wynosi " << sumacyfry_iteracyjnie(cyfra) << endl;
+   */
+   /*string cyfra;                                                 //zadanie 2.r
+   cout << "podaj cyfre" << endl;
+   cin >> cyfra;
+   cout << "suma cyfr wynosi " << sumacyfry_rekurencyjnie(cyfra) << endl;
+   return 0;
+   */
 
     /*
     int liczba = 0;                                         //zadanie 6.r
@@ -64,16 +77,17 @@ int main()
 	cout << "suma n liczb wynosi " << suma_n_liczb_rekurencyjnie(liczba) << endl;   
     */
 
-	/*string cyfra;                                                  //zadanie 10.i
-	cout << "podaj cyfre" << endl;
-	cin >> cyfra;
-	cout << "suma cyfr wynosi " << sumacyfry_iteracyjnie(cyfra) << endl;
+	
+
+	/*int liczba1, liczba2;                                       //zadanie 10.r
+	cout << "podaj dwie liczby calkowite dodatnie" << endl;
+	cin >> liczba1 >> liczba2;
+    cout << algorytm_euklidesa(liczba1, liczba2) << endl;
     */
-	/*string cyfra;                                                 //zadanie 10.r
-    cout << "podaj cyfre" << endl;
-    cin >> cyfra;
-    cout << "suma cyfr wynosi " << sumacyfry_rekurencyjnie(cyfra) << endl;
-    return 0;
+    /*int liczba1, liczba2;                                       //zadanie 10.i
+    cout << "podaj dwie liczby calkowite dodatnie" << endl;
+    cin >> liczba1 >> liczba2;
+    cout << NWD_iteracyjnie(liczba1, liczba2) << endl;
     */
 
 }
@@ -182,4 +196,22 @@ int suma_n_liczb_rekurencyjnie(int liczba){
     else {
 		return liczba + suma_n_liczb_rekurencyjnie(liczba - 1);
     }
+}
+
+
+int  algorytm_euklidesa(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    else {
+        return algorytm_euklidesa(b, a % b);
+	}
+}
+int NWD_iteracyjnie(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
 }
