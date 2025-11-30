@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 int sumacyfry_iteracyjnie(string cyfra);
 int sumacyfry_rekurencyjnie(string cyfra);
@@ -14,96 +15,109 @@ int suma_n_liczb_iteracyjnie(int liczba);
 int suma_n_liczb_rekurencyjnie(int liczba);
 int  algorytm_euklidesa(int a, int b);
 int NWD_iteracyjnie(int a, int b);
+int najwieksza_wartosc_iteracyjnie(vector<int> tablica, int rozmiar);
+int najwieksza_wartosc_rekurencyjnie(vector<int> tablica, int rozmiar);
 int main()
 {
 
-   /* int x;                                                  //zadanie 1.
-    cout << "podaj wysokosc choinki" << endl;
-    cin >> x;
-	choinka(x,1);
-   */
-
-   /*string cyfra;                                                  //zadanie 2.i
-   cout << "podaj cyfre" << endl;
-   cin >> cyfra;
-   cout << "suma cyfr wynosi " << sumacyfry_iteracyjnie(cyfra) << endl;
-   */
-   /*string cyfra;                                                 //zadanie 2.r
-   cout << "podaj cyfre" << endl;
-   cin >> cyfra;
-   cout << "suma cyfr wynosi " << sumacyfry_rekurencyjnie(cyfra) << endl;
-   return 0;
-   */
-
-    /*
-    int liczba = 0;                                         //zadanie 6.r
-    cout << "podaj liczbe " << endl;
-    cin >> liczba;
-    cout << liczba << " liczba fibonachiago jest rowna " << fibonachi(liczba) << endl; 
-    */
-    /*int liczba = 0;                                       //zadanie6.i
-    cout << "podaj ktora liczbe ciagu fibonachiego chcesz obliczyc " << endl;
-    cin >> liczba;*/
-    /*int podstawa = 0, wykladnik = 0;                                                            //zadanie 7.i
-    cout << " podaj podstawe i wykladnik potegi (tylko liczby naturalne)" << endl;
-    cin >> podstawa;
-    cin >> wykladnik;
-    cout << "Wynik " << podstawa << "  podnisione do potegi " << wykladnik << " = " << potegowanie_iteracyjnie(podstawa, wykladnik) << endl;
-    */
-	/*int podstawa = 0, wykladnik = 0;                                                            //zadanie 7.r
-    cout << " podaj podstawe i wykladnik potegi (tylko liczby naturalne)" << endl;
-    cin >> podstawa;
-    cin >> wykladnik;
-    cout << "Wynik " << podstawa << "  podnisione do potegi " << wykladnik << " = " << potegowanie_rekurencyjne(podstawa, wykladnik) << endl;
-   */
-	/*int liczba = 0;                                       //zadanie 8.i
-    cout << "podaj liczbe ktorej silnie chcessz uzyskac" << endl;
-	cin >> liczba;
-	cout  << liczba << "! wynosi " << silnia_iteracyjnie(liczba) << endl;
-    */
-   /* int liczba = 0;                                       //zadanie 8.r
-    cout << "podaj liczbe ktorej silnie chcessz uzyskac" << endl;
-    cin >> liczba;
-    cout << liczba << "! wynosi " << silnia_rekurencyjnie(liczba) << endl;
-    */
-	/*int liczba = 0;                                       //zadanie 9.i
-	cout << "podaj liczbe do ktorej chcesz obliczyc sume n liczb" << endl;
-	cin >> liczba;
-	cout << "suma n liczb wynosi " << suma_n_liczb_iteracyjnie(liczba) << endl;
-    */
-	/*int liczba = 0;                                       //zadanie 9.r
-	cout << "podaj liczbe do ktorej chcesz obliczyc sume n liczb" << endl;
-	cin >> liczba;
-	cout << "suma n liczb wynosi " << suma_n_liczb_rekurencyjnie(liczba) << endl;   
+    /* int x;                                                  //zadanie 1.
+     cout << "podaj wysokosc choinki" << endl;
+     cin >> x;
+     choinka(x,1);
     */
 
-	
-
-	/*int liczba1, liczba2;                                       //zadanie 10.r
-	cout << "podaj dwie liczby calkowite dodatnie" << endl;
-	cin >> liczba1 >> liczba2;
-    cout << algorytm_euklidesa(liczba1, liczba2) << endl;
+    /*string cyfra;                                                  //zadanie 2.i
+    cout << "podaj cyfre" << endl;
+    cin >> cyfra;
+    cout << "suma cyfr wynosi " << sumacyfry_iteracyjnie(cyfra) << endl;
     */
-    /*int liczba1, liczba2;                                       //zadanie 10.i
-    cout << "podaj dwie liczby calkowite dodatnie" << endl;
-    cin >> liczba1 >> liczba2;
-    cout << NWD_iteracyjnie(liczba1, liczba2) << endl;
+    /*string cyfra;                                                 //zadanie 2.r
+    cout << "podaj cyfre" << endl;
+    cin >> cyfra;
+    cout << "suma cyfr wynosi " << sumacyfry_rekurencyjnie(cyfra) << endl;
+    return 0;
     */
-
-}
-
-void choinka(int wysokosc, int szerokosc) {
-    if (wysokosc > 0) {
-        for (int i = 0; i < wysokosc - 1; i++) {
-            cout << " ";
-        }
-        for (int j = 0; j < szerokosc; j++) {
-            cout << "*";
-        }
-        cout << endl;
-        choinka(wysokosc - 1, szerokosc + 2);
+   /* int rozmiar;                                               //zadanie 5.
+    cout << "podaj rozmiar tablicy " << endl;
+    cin >> rozmiar;
+    vector<int> tablica(rozmiar);
+    for (int i = 0; i < rozmiar; i++) {
+        cout << "podaj " << i + 1 << " element tablicy " << endl;
+		cin >> tablica[i];
     }
-}
+	cout << "najwieksza wartosc w tablicy to " << najwieksza_wartosc_iteracyjnie(tablica, rozmiar) << endl;
+	cout << "najwieksza wartosc w tablicy to " << najwieksza_wartosc_rekurencyjnie(tablica, rozmiar) << endl;
+    */
+        /*
+        int liczba = 0;                                         //zadanie 6.r
+        cout << "podaj liczbe " << endl;
+        cin >> liczba;
+        cout << liczba << " liczba fibonachiago jest rowna " << fibonachi(liczba) << endl;
+        */
+        /*int liczba = 0;                                       //zadanie6.i
+        cout << "podaj ktora liczbe ciagu fibonachiego chcesz obliczyc " << endl;
+        cin >> liczba;*/
+        /*int podstawa = 0, wykladnik = 0;                                                            //zadanie 7.i
+        cout << " podaj podstawe i wykladnik potegi (tylko liczby naturalne)" << endl;
+        cin >> podstawa;
+        cin >> wykladnik;
+        cout << "Wynik " << podstawa << "  podnisione do potegi " << wykladnik << " = " << potegowanie_iteracyjnie(podstawa, wykladnik) << endl;
+        */
+        /*int podstawa = 0, wykladnik = 0;                                                            //zadanie 7.r
+        cout << " podaj podstawe i wykladnik potegi (tylko liczby naturalne)" << endl;
+        cin >> podstawa;
+        cin >> wykladnik;
+        cout << "Wynik " << podstawa << "  podnisione do potegi " << wykladnik << " = " << potegowanie_rekurencyjne(podstawa, wykladnik) << endl;
+       */
+       /*int liczba = 0;                                       //zadanie 8.i
+       cout << "podaj liczbe ktorej silnie chcessz uzyskac" << endl;
+       cin >> liczba;
+       cout  << liczba << "! wynosi " << silnia_iteracyjnie(liczba) << endl;
+       */
+       /* int liczba = 0;                                       //zadanie 8.r
+        cout << "podaj liczbe ktorej silnie chcessz uzyskac" << endl;
+        cin >> liczba;
+        cout << liczba << "! wynosi " << silnia_rekurencyjnie(liczba) << endl;
+        */
+        /*int liczba = 0;                                       //zadanie 9.i
+        cout << "podaj liczbe do ktorej chcesz obliczyc sume n liczb" << endl;
+        cin >> liczba;
+        cout << "suma n liczb wynosi " << suma_n_liczb_iteracyjnie(liczba) << endl;
+        */
+        /*int liczba = 0;                                       //zadanie 9.r
+        cout << "podaj liczbe do ktorej chcesz obliczyc sume n liczb" << endl;
+        cin >> liczba;
+        cout << "suma n liczb wynosi " << suma_n_liczb_rekurencyjnie(liczba) << endl;
+        */
+
+
+
+        /*int liczba1, liczba2;                                       //zadanie 10.r
+        cout << "podaj dwie liczby calkowite dodatnie" << endl;
+        cin >> liczba1 >> liczba2;
+        cout << algorytm_euklidesa(liczba1, liczba2) << endl;
+        */
+        /*int liczba1, liczba2;                                       //zadanie 10.i
+        cout << "podaj dwie liczby calkowite dodatnie" << endl;
+        cin >> liczba1 >> liczba2;
+        cout << NWD_iteracyjnie(liczba1, liczba2) << endl;
+        */
+
+    }
+
+    void choinka(int wysokosc, int szerokosc) {
+        if (wysokosc > 0) {
+            for (int i = 0; i < wysokosc - 1; i++) {
+                cout << " ";
+            }
+            for (int j = 0; j < szerokosc; j++) {
+                cout << "*";
+            }
+            cout << endl;
+            choinka(wysokosc - 1, szerokosc + 2);
+        }
+    }
+
 
 int sumacyfry_iteracyjnie(string cyfra){
     int suma = 0;
@@ -160,9 +174,7 @@ int potegowanie_rekurencyjne(int podstawa, int wykladnik) {
         return podstawa;
     }
     else {
-        for (int i=0; i < wykladnik; i++) {
 			return podstawa * potegowanie_rekurencyjne(podstawa, wykladnik - 1);
-       }
     }
 }
 
@@ -214,4 +226,21 @@ int NWD_iteracyjnie(int a, int b) {
         a = temp;
     }
     return a;
+}
+
+int najwieksza_wartosc_iteracyjnie(vector<int> tablica, int rozmiar){
+    for(int i=0;i<rozmiar;i++){
+     if (tablica[i] > tablica[0]) {
+        swap(tablica[0], tablica[i]);
+	 }
+	}
+	return tablica[0];
+}
+int najwieksza_wartosc_rekurencyjnie(vector<int> tablica, int rozmiar) {
+    if (rozmiar == 0) {
+        return tablica[0];
+    }
+    else {
+		return max(tablica[rozmiar - 1], najwieksza_wartosc_rekurencyjnie(tablica, rozmiar - 1));
+    }
 }
