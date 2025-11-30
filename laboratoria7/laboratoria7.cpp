@@ -7,6 +7,10 @@ int fibonachi_iteracyjnie(int liczba);
 void choinka(int wysokosc,int szerokosc);
 int potegowanie_iteracyjnie(int podstawa, int wykladnik);
 int potegowanie_rekurencyjne(int podstawa, int wykladnik);
+int silnia_iteracyjnie(int liczba);
+int silnia_rekurencyjnie(int liczba);
+int suma_n_liczb_iteracyjnie(int liczba);
+int suma_n_liczb_rekurencyjnie(int liczba);
 int main()
 {
 
@@ -38,10 +42,27 @@ int main()
     cin >> wykladnik;
     cout << "Wynik " << podstawa << "  podnisione do potegi " << wykladnik << " = " << potegowanie_rekurencyjne(podstawa, wykladnik) << endl;
    */
-	int liczba = 0;                                       //zadanie 8.i
-    cout << "podaj liczbe której silnie chcessz uzyskac" << endl;
-    
-    
+	/*int liczba = 0;                                       //zadanie 8.i
+    cout << "podaj liczbe ktorej silnie chcessz uzyskac" << endl;
+	cin >> liczba;
+	cout  << liczba << "! wynosi " << silnia_iteracyjnie(liczba) << endl;
+    */
+   /* int liczba = 0;                                       //zadanie 8.r
+    cout << "podaj liczbe ktorej silnie chcessz uzyskac" << endl;
+    cin >> liczba;
+    cout << liczba << "! wynosi " << silnia_rekurencyjnie(liczba) << endl;
+    */
+	/*int liczba = 0;                                       //zadanie 9.i
+	cout << "podaj liczbe do ktorej chcesz obliczyc sume n liczb" << endl;
+	cin >> liczba;
+	cout << "suma n liczb wynosi " << suma_n_liczb_iteracyjnie(liczba) << endl;
+    */
+	/*int liczba = 0;                                       //zadanie 9.r
+	cout << "podaj liczbe do ktorej chcesz obliczyc sume n liczb" << endl;
+	cin >> liczba;
+	cout << "suma n liczb wynosi " << suma_n_liczb_rekurencyjnie(liczba) << endl;   
+    */
+
     return 0;
 
 
@@ -59,6 +80,7 @@ void choinka(int wysokosc, int szerokosc) {
         choinka(wysokosc - 1, szerokosc + 2);
     }
 }
+
 int fibonachi(int x) {
     if (x == 0)
         return 0;
@@ -102,5 +124,37 @@ int potegowanie_rekurencyjne(int podstawa, int wykladnik) {
         for (int i=0; i < wykladnik; i++) {
 			return podstawa * potegowanie_rekurencyjne(podstawa, wykladnik - 1);
        }
+    }
+}
+
+int silnia_iteracyjnie(int liczba) {
+    int wynik = 1;
+    for (int i = 1; i <= liczba; i++) {
+        wynik = wynik * i;
+    }
+    return wynik;
+}
+int silnia_rekurencyjnie(int liczba){
+    if (liczba == 0) {
+        return 1;
+    }
+    else {
+        return liczba * silnia_rekurencyjnie(liczba - 1);
+    }
+}
+
+int suma_n_liczb_iteracyjnie(int liczba) {
+    int suma = 0;
+    for (int i = 1; i <= liczba; i++) {
+        suma = suma + i;
+    }
+    return suma;
+}
+int suma_n_liczb_rekurencyjnie(int liczba){
+    if (liczba == 0) {
+        return 0;
+    }
+    else {
+		return liczba + suma_n_liczb_rekurencyjnie(liczba - 1);
     }
 }
